@@ -22,6 +22,11 @@ const TypeBox: FC<TypeBoxProps> = ({ timerOn, setTimerOn }) => {
     const currentText = event.target.value;
     setTypedText(currentText);
     if (!timerOn) setTimerOn(true);
+
+    // Completed
+    if (currentText.length === placeholderText.length) {
+      setTimerOn(false);
+    }
   };
 
   const getHighlightedText = () => {
@@ -40,6 +45,8 @@ const TypeBox: FC<TypeBoxProps> = ({ timerOn, setTimerOn }) => {
     });
   };
 
+  const inputDisabled = typedText.length === placeholderText.length;
+
   return (
     <div>
       <div className="mb-4 text-2xl font-mono">{getHighlightedText()}</div>
@@ -50,6 +57,7 @@ const TypeBox: FC<TypeBoxProps> = ({ timerOn, setTimerOn }) => {
         onChange={handleChange}
         value={typedText}
         aria-label="Type the text here"
+        disabled={inputDisabled}
       />
     </div>
   );
