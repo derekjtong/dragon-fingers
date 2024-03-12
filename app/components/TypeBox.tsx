@@ -1,9 +1,14 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, FC } from "react";
 
 const placeholderText = `good give eye these without move life also part even what who high much present mean man little to open school mean there see few these no there real keep which more state govern from just look at`;
 
-function TypeBox() {
+type TypeBoxProps = {
+  timerOn: boolean;
+  setTimerOn: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const TypeBox: FC<TypeBoxProps> = ({ timerOn, setTimerOn }) => {
   const [typedText, setTypedText] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,6 +21,7 @@ function TypeBox() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const currentText = event.target.value;
     setTypedText(currentText);
+    if (!timerOn) setTimerOn(true);
   };
 
   const getHighlightedText = () => {
@@ -47,6 +53,6 @@ function TypeBox() {
       />
     </div>
   );
-}
+};
 
 export default TypeBox;
