@@ -11,7 +11,7 @@ export default function Home() {
     <div className="bg-zinc-700 w-full min-h-screen flex flex-col px-40">
       <div className="flex justify-between pt-10">
         <Logo />
-        <div className="text-xl text-gray-400 hover:text-gray-200 hover:cursor-pointer">
+        <div className="text-xl text-gray-400 hover:text-gray-200 hover:cursor-pointer font-mono">
           Login
         </div>
       </div>

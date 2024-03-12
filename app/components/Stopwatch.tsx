@@ -36,12 +36,10 @@ const Stopwatch: FC<StopwatchProps> = ({
   const toggleTimer = () => setTimerOn(!timerOn);
 
   return (
-    <div className="stopwatch">
-      <div onClick={toggleTimer} className="text-white mb-2">
-        {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
-        {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
-        {("0" + ((time / 10) % 100)).slice(-2)}
-      </div>
+    <div onClick={toggleTimer} className="text-white mb-2 font-mono">
+      {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+      {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
+      {("0" + ((time / 10) % 100)).slice(-2)}
     </div>
   );
 };
