@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const placeholderText = `good give eye these without move life also part even what who high much present mean man little to open school mean there see few these no there real keep which more state govern from just look at`;
 
