@@ -10,9 +10,9 @@ export default function Home() {
           Login
         </div>
       </div>
-      <div className="flex flex-grow items-center justify-center">
+      <center className="flex flex-grow items-center justify-center">
         <TypeBox />
-      </div>
+      </center>
     </div>
   );
 }
