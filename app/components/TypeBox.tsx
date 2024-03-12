@@ -1,7 +1,16 @@
 "use client";
 import { useState, useEffect, useRef, FC } from "react";
 
-const placeholderText = `good give eye these without move life also part even what who high much present mean man little to open school mean there see few these no there real keep which more state govern from just look at`;
+// const placeholderText = `good give eye these without move life also part even what who high much present mean man little to open school mean there see few these no there real keep which more state govern from just look at`;
+
+const getRandomPlaceholderText = () => {
+  const texts = [
+    `good give eye these without move life also part even what who high much present mean man little to open school mean there see few these no there real keep which more state govern from just look at`,
+    "placeholderText",
+  ];
+  const index = Math.floor(Math.random() * texts.length);
+  return texts[index];
+};
 
 type TypeBoxProps = {
   timerOn: boolean;
@@ -9,6 +18,8 @@ type TypeBoxProps = {
 };
 
 const TypeBox: FC<TypeBoxProps> = ({ timerOn, setTimerOn }) => {
+  const [placeholderText] = useState(getRandomPlaceholderText());
+
   const [typedText, setTypedText] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
